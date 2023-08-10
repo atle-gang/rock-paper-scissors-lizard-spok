@@ -28,3 +28,21 @@ function checkWinner(playerSelection, computerSelection) {
         return 'Computer'
     }
 };
+
+
+// create a function that gets and validates user input
+function getPlayerChoice() {
+    let validatedInput = false;
+    while (validatedInput === false){
+        const playerChoice = prompt("Select your weapon: ");
+        if (playerChoice === null) {
+            continue;
+        } else {
+            const playerChoiceInLower = playerChoice.toLowerCase();
+            if (weaponOptions.includes(playerChoiceInLower)) {
+                validatedInput = true;
+                return playerChoiceInLower;
+            };
+        };
+    };
+};
