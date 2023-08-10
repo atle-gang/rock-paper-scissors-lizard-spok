@@ -58,3 +58,34 @@ function playRound(playerSelection, computerSelection) {
         return `You lose! ${computerSelection} beats ${playerSelection}.`
     }
 };
+
+
+// create game function that'll play 5 rounds of the game
+function game(){
+    // intialise computer and player scores
+    let playerScore = 0;
+    let computerScore = 0;
+
+    // Loop that'll allow 5 rounds of the game to be played
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = getPlayerChoice();
+        const computerSelection = getComputerChoice(); 
+        
+        console.log(playRound(playerSelection, computerSelection))
+        
+        if (checkWinner(playerSelection, computerSelection) === 'Player') {
+            playerScore++
+        } else if (checkWinner(playerSelection, computerSelection) === 'Computer'){
+            computerScore++
+        };
+    };
+    if (playerScore > computerScore) {
+        console.log('You win! Congratulations.')
+    } else if (computerScore > playerScore) {
+        console.log("You lose! You got beaten by the computer")
+    } else {
+        console.log("We have a tie! Play another game round to settle the tie")
+    };
+};
+
+game()
