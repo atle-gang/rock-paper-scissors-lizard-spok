@@ -17,7 +17,7 @@ const winningCombinations = {
 };
 
 
-// Define constant object for possible outcomes of the game.
+// Define constant objects for possible outcomes of the game.
 const GAME_OUTCOME = {
     TIE: 'Tie',
     PLAYER_WIN: 'Player',
@@ -55,6 +55,7 @@ function getPlayerChoice() {
 };
 
 
+
 // Create a function that simulates a single round of the game.
 function playRound(playerSelection, computerSelection) {
     const result = checkWinner(playerSelection, computerSelection)
@@ -69,7 +70,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 // Intialize player and computer scores.
-function initliaseScores() {
+function initliazeScores() {
     return {
         player: 0,
         computer: 0
@@ -79,7 +80,7 @@ function initliaseScores() {
 
 // Function to loop through game.
 function playGameRounds(numberOfRounds) {
-    let scores = initliaseScores();
+    let scores = initliazeScores();
 
     for (let i = 0; i < numberOfRounds; i++) {
         const playerSelection = getPlayerChoice();
@@ -89,9 +90,9 @@ function playGameRounds(numberOfRounds) {
         console.log(playRound(playerSelection, computerSelection));
         
         if (winner === 'Player') {
-            playerScore++;
+            scores.player++;
         } else if (winner === 'Computer') {
-            computerScore++;
+            scores.computer++;
         }
     };
 
