@@ -17,7 +17,7 @@ const winningCombinations = {
 };
 
 
-// Define constant objects for possible outcomes of the game.
+// Define constant object for possible outcomes of the game.
 const GAME_OUTCOME = {
     TIE: 'Tie',
     PLAYER_WIN: 'Player',
@@ -55,13 +55,12 @@ function getPlayerChoice() {
 };
 
 
-
 // Create a function that simulates a single round of the game.
 function playRound(playerSelection, computerSelection) {
     const result = checkWinner(playerSelection, computerSelection)
-    if (result === 'Tie') {
+    if (result === GAME_OUTCOME.TIE) {
         return "It's a tie!"
-    } else if (result === 'Player') {
+    } else if (result === GAME_OUTCOME.PLAYER_WIN) {
         return `You win! ${playerSelection} beats ${computerSelection}.`
     } else {
         return `You lose! ${computerSelection} beats ${playerSelection}.`
