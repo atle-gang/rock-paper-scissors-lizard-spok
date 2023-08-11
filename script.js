@@ -65,11 +65,11 @@ function getPlayerChoice() {
 function playRound(playerSelection, computerSelection) {
     const result = checkWinner(playerSelection, computerSelection)
     if (result === GAME_OUTCOME.TIE) {
-        return "It's a tie!"
+        return resultMessage.textContent = "It's a tie!";
     } else if (result === GAME_OUTCOME.PLAYER_WIN) {
-        return `You win! ${playerSelection} beats ${computerSelection}.`
+        return resultMessage.textContent = `You win! ${playerSelection} beats ${computerSelection}.`;
     } else {
-        return `You lose! ${computerSelection} beats ${playerSelection}.`
+        return resultMessage.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
     }
 };
 
