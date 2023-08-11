@@ -1,5 +1,11 @@
 const weaponOptions = ['rock', 'paper', 'scissors', 'lizard', 'spok'];
 
+
+// Grab html elements
+const resultMessage = document.getElementById('result-message');
+const finalOutcome = document.getElementById('final-outcome') 
+
+
 // Generate a random weapon choice each time the function is called.
 function getComputerChoice(){
     const computerChoice = weaponOptions[Math.floor(Math.random() * weaponOptions.length)];
@@ -102,11 +108,11 @@ function playGameRounds(numberOfRounds) {
 // Display the final outcome of the game based on player and computer scores.
 function displayFinalOutcome(scores) {
     if (scores.player > scores.computer) {
-        console.log('Game Over. You win! Congratulations.');
+        finalOutcome.textContent = "Game Over. You have beaten the computer.";
     } else if (scores.computer > scores.player) {
-        console.log("Game Over. You lose! You got beaten by the computer.");
+        finalOutcome.textContent = "Game Over. You got beaten by the computer.";
     } else {
-        console.log("Game Over. We have a tie! Play another game round to settle the tie.");
+        finalOutcome.textContent = "Game Over. We have a tie! Play another game round to settle the tie.";
     }
 };
 
