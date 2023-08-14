@@ -12,11 +12,7 @@ main {
     justify-content: center;
 }
 
-.results-container {
-    margin-top: 20px;
-}
+.scores-container {
 
-.button-selections {
-    margin-top: 20px;
-
+    margin-top: 200px;
 }
